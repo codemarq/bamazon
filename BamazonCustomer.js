@@ -14,11 +14,13 @@ var connection = mysql.createConnection({
 
 
 
-// connect to DB
+// connect to DB and start bamazon store
 connection.connect(function(err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId);
     displayTable();
+    // need a timeout here
+    userPrompt();
 })
 
 function displayTable () {
@@ -39,6 +41,39 @@ function displayTable () {
 		console.log(table.toString());
 	});
 }
+
+// prompt user after table load
+function userPrompt () {
+	inquirer.prompt({
+        name: "action",
+        type: "list",
+        message: "What would you like to do?",
+        choices: ["Find songs by artist", "Find all artists who appear more than once", "Find data within a specific range", "Search for a specific song"]
+    }).then(function(answer) {
+        switch(answer.action) {
+            case 'Find songs by artist':
+                artistSearch();
+            break;
+
+            case 'Find all artists who appear more than once':
+                multiSearch();
+            break;
+
+            case 'Find data within a specific range':
+                rangeSearch();
+            break;
+
+            case 'Search for a specific song':
+                songSearch();
+            break;
+        }
+    })
+}
+
+
+// ========================================================
+// DB Query functions
+// ========================================================
 
 // update db function
 function updateDB () {
