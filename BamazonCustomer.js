@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
 // connect to DB and start bamazon store
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId);
+    console.log("connected to bamazon as id " + connection.threadId);
     displayTable();
     // need a timeout here
     setTimeout(userPrompt, 1000);
