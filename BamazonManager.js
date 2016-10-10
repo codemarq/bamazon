@@ -127,6 +127,9 @@ function addPrompts () {
 }
 
 // add new products to inventory
-function addNewProd () {
-
+function addNewProd (productName, departmentName, price, stock) {
+	connection.query('INSERT INTO Products (ProductName, DepartmentName, Price, StockQuantity) VALUES (?)', [this.productName, this.departmentName, this.price, this.StockQuantity] function(error, result) {
+		if (error) throw error;
+		displayTable('SELECT * FROM Products');
+	});p
 }
