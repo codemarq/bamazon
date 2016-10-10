@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 	host: 'localhost',
 	port: 3306,
 	user: 'root',
-	password: '50Wookie$',
+	password: '',
 	database: 'bamazon'
 });
 
@@ -111,23 +111,18 @@ function addPrompts () {
     	var newQuant;
     	connection.query('SELECT * FROM Products WHERE ?', [{ItemID: answer.ID}], function(err, res) {
     		newQuant = parseFloat(res[0].StockQuantity) + parseFloat(answer.addQuant);
-    		console.log(newQuant);
-    		console.log(typeof newQuant);
-    	})
-    	console.log(newQuant);
-    	// newQuant = result[0].StockQuantity + answer.addQuant;
-    	// console.log(newQuant);
+    	});
 
-       	connection.query('UPDATE Products SET ? WHERE ?', [{StockQuantity: newQuant}, {ItemID: answer.ID}], function(error, result) {
+    	setTimeout(function() {
+    		connection.query('UPDATE Products SET ? WHERE ?', [{StockQuantity: newQuant}, {ItemID: answer.ID}], function(error, result) {
 			if (error) throw error;
-
 			console.log("Successfully updated inventory of ItemID " + answer.ID + " with " + answer.addQuant + " more units.");
-
-			displayTable('SELECT * FROM Products');
+			});
+			// display table with new values
+    		displayTable('SELECT * FROM Products');
 
 			setTimeout(userPrompt, 1000);
-
-		});
+    	}, 1000);
     });
 }
 

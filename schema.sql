@@ -12,3 +12,11 @@ CREATE TABLE Products (
 );
 
 SELECT * FROM Products;
+
+CREATE TABLE Departments(
+	`DepartmentID` INTEGER (11) NOT NULL AUTO_INCREMENT,
+	`DepartmentName` VARCHAR (25) NOT NULL,
+	`OverHeadCosts` DECIMAL (10,2) NOT NULL,
+	`TotalSales` DECIMAL (10, 2) NOT NULL,
+	PRIMARY KEY (`DepartmentID`)
+);
