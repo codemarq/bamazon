@@ -19,7 +19,7 @@ connection.connect(function(err) {
     displayTable();
     // need a timeout here
     setTimeout(userPrompt, 1000);
-})
+});
 
 // draw the table of items in bamazon store
 function displayTable () {
@@ -61,14 +61,10 @@ function userPrompt () {
 		
 		if (error) throw error;
 		
-		var stockQuant = result[0].StockQuantity;
-		var orderQuant = answer.orderQuant;
-
 		checkQuantity(answer.ID, answer.orderQuant, result[0].StockQuantity, result[0].Price);
-
 		});
     });
-};
+}
 
 
 function checkQuantity (id, order, stock, price) {
@@ -82,4 +78,4 @@ function checkQuantity (id, order, stock, price) {
 
 		console.log("Order successful! your total cost is $" + order * price);
 	}
-};
+}
