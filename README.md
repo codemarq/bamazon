@@ -12,7 +12,7 @@ Bamazon is a Node JS app which mimics an Amazon type of store.  This app is writ
 
 
 ## Screenshots
-![ScreenShot]('custSuccess.png')
+![ScreenShot](custSuccess.png)
 
 ## Built With
 * SublimeText 3
