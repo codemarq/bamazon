@@ -1,3 +1,5 @@
+[![NSP Status](https://nodesecurity.io/orgs/codemarq/projects/f611a3a3-ae4b-4ee7-80ee-4fa706342669/badge)](https://nodesecurity.io/orgs/codemarq/projects/f611a3a3-ae4b-4ee7-80ee-4fa706342669)
+
 # Bamazon node.js app
 Bamazon is a Node JS app which mimics an Amazon type of store.  This app is written in Node.JS and uses a local MySQL database.
 
