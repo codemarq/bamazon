@@ -27,5 +27,5 @@ Bamazon is a Node JS app which mimics an Amazon type of store.  This app is writ
 
 
 ## Author
-John-Mike Marquardt @codemarq
+&copy; 2016 John-Mike Marquardt [Github](https://github.com/codemarq) | [jmmarquardt.com](https://jmmarquardt.com) | [LinkedIn](https://www.linkedin.com/in/jmmarquardt)
 :neckbeard:
